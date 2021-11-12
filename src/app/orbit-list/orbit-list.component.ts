@@ -27,4 +27,13 @@ export class OrbitListComponent implements OnInit {
 		});
 	}
 
+	isDebris(type: string): boolean {
+		if(type === "Space Debris") {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
 }
