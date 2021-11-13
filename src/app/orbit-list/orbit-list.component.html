@@ -6,12 +6,15 @@
         <th>Orbit Type</th>
         <th>Launch Date</th>
     </tr>
-    <tr class="data-row" *ngFor = "let satellite of satellites">
-        <td>{{satellite.name}}</td>
-       <div > <td> {{satellite.type}} </td> </div>
-        <td>{{satellite.operational}}</td>
-        <td>{{satellite.orbitType}}</td>
-        <td>{{satellite.launchDate}}</td>
+    <tr class="data-row" *ngFor = "let satellite of satellites; let i = index"
+        [attr.data-index] = "i" [class.zebracolor] = "isZebraColor(i)">  
+      
+           <td>{{satellite.name}}</td>       
+           <td [class.warning]="isSpaceDebris(satellite.type)"> {{satellite.type}} </td> 
+           <td>{{satellite.operational}}</td>
+           <td>{{satellite.orbitType}}</td>
+           <td>{{satellite.launchDate}}</td>
+             
     </tr>
 </table>
 

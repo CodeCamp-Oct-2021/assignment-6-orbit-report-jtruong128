@@ -27,7 +27,7 @@ export class OrbitListComponent implements OnInit {
 		});
 	}
 
-	isDebris(type: string): boolean {
+	isSpaceDebris(type: string): boolean {
 		if(type === "Space Debris") {
 			return true;
 		} else {
@@ -35,5 +35,18 @@ export class OrbitListComponent implements OnInit {
 		}
 
 	}
+
+	isZebraColor(type: number): boolean {
+		if(type % 2 == 0) {
+			return true;
+		} else {
+			return false;
+		} 
+
+	}
+
+
+
+
 
 }
